@@ -35,7 +35,7 @@ async function Dishes(props : any) {
            <div className="sm:flex sm:flex-wrap md:w-11/12 md:mx-auto mb-6">
            {  data.meals.map((food : Food) => 
                 <div key={food.idMeal} className="w-full sm:w-6/12 md:w-4/12 lg:w-3/12 my-2 px-2">
-                    <Link href="/recipe/[id]" as={`/recipe/${food.idMeal}`}>
+                    <Link href="/recipes/[id]" as={`/recipes/${food.idMeal}`}>
                         <Card mealName={food.strMeal} mealImg={food.strMealThumb}  />
                     </Link>
                 </div>)
