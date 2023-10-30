@@ -6,7 +6,7 @@ const Header = () => {
              <nav className="w-3/12 px-2 md:px-4 tracking-wider
              font-semibold text-gray-800">
                  <Link href="/" className="px-2 flex items-center justify-center">
-                    <img src="img/hat.svg" alt="logo"
+                    <img src="/img/hat.svg" alt="logo"
                     className="w-12 h-12 object-cover inline-block" />
                     <h2 className="ml-1 text-xl md:text-3xl tracking-wider
                     text-green-600 tracking-wider hidden sm:inline-block my-font">foodie</h2>			  

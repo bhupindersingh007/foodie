@@ -16,8 +16,8 @@ export default function Home() {
            </div>
            <h2 className="text-2xl md:text-3xl text-gray-800 font-semibold mb-2">
              Don't just be foodie, make tasty food</h2>
-           <p className="text-lg">Foodie is a collection of 200
-           + unique recipes.So, don't just be foodie, make tasty food</p>
+           <p className="text-lg">Foodie is a collection of 200+ 
+           unique recipes.So, don't just be foodie, make tasty food</p>
 
               <Link href="/categories" className="px-8 py-2 rounded border-2 border-green-600 
               inline-block text-green-600 mt-4 tracking-wide font-semibold
@@ -27,7 +27,7 @@ export default function Home() {
          </div>
        </div>
        <div className="w-full md:w-1/2 my-2 md:my-0 order-1 md:order-none ">
-         <div style={{ backgroundImage:"url('img/dishes-2.jpg')" }}
+         <div style={{ backgroundImage:"url('/img/dishes-2.jpg')" }}
          className="py-48 md:py-64 ml-2 md:ml-0 bg-cover rounded-bl rounded-tl"></div>
        </div>
      </div>
@@ -37,7 +37,7 @@ export default function Home() {
     <section className="mt-6 md:mb-12">
      <div className="flex flex-wrap md:items-center">
        <div className="w-full md:w-1/2 my-2 md:my-0 order-1 md:order-none ">
-         <div style={{ backgroundImage: "url('img/dishes-3.jpg')" }}
+         <div style={{ backgroundImage: "url('/img/dishes-3.jpg')" }}
          className="py-48 md:py-64 mr-2 md:mr-0 bg-cover rounded-br rounded-tr"></div>
        </div>
        
