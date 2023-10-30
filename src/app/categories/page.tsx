@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Card from '@/components/card';
+import Card from '@/components/Card';
 
 async function getCategories() {
   
@@ -14,7 +14,12 @@ async function getCategories() {
 };
 
 
-// todo : fix type errors 
+type Category = {
+    idCategory : number,
+    strCategory : string,
+    strCategoryThumb : string
+
+}
 
 
 export default async function Categories() {
@@ -30,17 +35,14 @@ export default async function Categories() {
                 </h1>
             </header>
             <div className="sm:flex sm:flex-wrap md:w-11/12 md:mx-auto mb-6">
-                {/*looping through categories array to make categories card */}
-                { 
-                
-                data.categories.map(
-                    category => 
+                { data.categories.map(
+                    (category : Category)  => 
                     <div key={category.idCategory} className="w-full sm:w-6/12 md:w-4/12 lg:w-3/12 my-2 px-2">
                         <Link href="/category/[name]" as={`/category/${category.strCategory}`}>
                             <Card mealName={category.strCategory} mealImg={category.strCategoryThumb} />
                         </Link>
-                    </div>)
-                }
+                    </div>
+                )}
             </div>
         </div>
 
