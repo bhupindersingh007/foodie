@@ -18,7 +18,6 @@ type Category = {
     idCategory : number,
     strCategory : string,
     strCategoryThumb : string
-
 }
 
 
@@ -29,7 +28,7 @@ export default async function Categories() {
 
     return <div className="mt-8 md:mt-12">
             <header className="flex justify-center mb-6">
-                <img src="/img/leaf.svg" className="w-8 h-8 object-cover mr-2" />
+                <img src="img/leaf.svg" className="w-8 h-8 object-cover mr-2" />
                 <h1 className="text-2xl font-semibold tracking-wider text-green-600 my-font">
                     Categories
                 </h1>
@@ -38,7 +37,7 @@ export default async function Categories() {
                 { data.categories.map(
                     (category : Category)  => 
                     <div key={category.idCategory} className="w-full sm:w-6/12 md:w-4/12 lg:w-3/12 my-2 px-2">
-                        <Link href="/category/[name]" as={`/category/${category.strCategory}`}>
+                        <Link href="/dishes/[name]" as={`/dishes/${category.strCategory}`}>
                             <Card mealName={category.strCategory} mealImg={category.strCategoryThumb} />
                         </Link>
                     </div>
@@ -47,3 +46,4 @@ export default async function Categories() {
         </div>
 
 }
+
