@@ -19,8 +19,11 @@ type Food = {
     strMealThumb : string
 }
 
+type DishesProp = {
+    params : { name : string }
+}
 
-async function Dishes(props : any) {
+async function Dishes(props : DishesProp) {
 
    const data = await getDishes(props.params.name);
 	  
