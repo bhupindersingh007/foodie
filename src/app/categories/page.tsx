@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import Card from '@/components/Card';
 
+
 async function getCategories() {
   
-    const res = await fetch('https://www.themealdb.com/api/json/v1/1/categories.php');
+    const res = await fetch(`${process.env.API_URL}/categories.php`);
 
     if (!res.ok) {
         throw new Error('Failed to fetch data')
@@ -24,7 +25,6 @@ type Category = {
 export default async function Categories() {
 
     const data = await getCategories();
-
 
     return <div className="mt-8 md:mt-12">
             <header className="flex justify-center mb-6">

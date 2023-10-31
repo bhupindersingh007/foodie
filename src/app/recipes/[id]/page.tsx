@@ -1,6 +1,6 @@
 async function getRecipeDetails(id: number) {
 
-    const res = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+    const res = await fetch(`${process.env.API_URL}/lookup.php?i=${id}`);
 
     if (!res.ok) {
         throw new Error('Failed to fetch data');

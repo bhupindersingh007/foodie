@@ -3,7 +3,7 @@ import Card from "@/components/Card";
 
 async function getDishes(name : string) {
   
-    const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${name}`);
+    const res = await fetch(`${process.env.API_URL}/filter.php?c=${name}`);
 
     if (!res.ok) {
         throw new Error('Failed to fetch data')
