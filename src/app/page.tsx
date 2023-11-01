@@ -1,11 +1,10 @@
 import Card from '@/components/Card';
-import Header from '@/components/Header'
 import Link from 'next/link'
 
 
 async function getRandomDish() {
 
-  const res = await fetch(`${process.env.API_URL}/random.php`);
+  const res = await fetch(`${process.env.API_URL}/random.php`, { next: { revalidate: (24 * 60 * 60) } });
 
   if (!res.ok) {
     throw new Error('Failed to fetch data')
