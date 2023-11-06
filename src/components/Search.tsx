@@ -64,8 +64,6 @@ class Search extends Component<{}, SearchState> {
     }
 
 
-
-
     render() {
 
         let classes = 'shadow w-full rounded text-left absolute bg-white mt-2';
@@ -78,8 +76,8 @@ class Search extends Component<{}, SearchState> {
             </svg>
             <form>
                 <input onChange={this.handleChange}
-                    value={this.state.query} type="search" placeholder="Pasta..."
-                    className="block w-full border px-10 py-2 rounded-md focus:outline-none focus:shadow-sm" />
+                    value={this.state.query} type="search" placeholder="Noodles..."
+                    className="block w-full border border-gray-300 px-10 py-2 rounded-lg focus:outline-none focus:shadow" />
             </form>
             
 
@@ -101,7 +99,7 @@ function SuggestionBox(props: any) {
         return <ul className={props.classes}>
         {  
             <li className="px-2 py-1 text-gray-800 hover:bg-gray-100">
-                <p className="text-gray-800 ml-4">No such recipe</p>
+                <p className="text-gray-500 ml-4">No such recipe</p>
             </li> 
         }
         </ul>;
@@ -109,7 +107,7 @@ function SuggestionBox(props: any) {
     }
 
     return <ul className={props.classes}>
-        { props.recipes.map((recipe : any) => (
+        { props.recipes.splice(0, 5).map((recipe : any) => (
             <li key={recipe.idMeal} className="px-2 py-1 text-gray-800 hover:bg-gray-100" onClick={props.handleClick}>
             <Link href="/recipe/[id]" as={`/recipe/${recipe.idMeal}`} className="flex items-center">
                 <img src={recipe.strMealThumb} alt="image" className="w-12 h-12 rounded" />
