@@ -1,10 +1,13 @@
 import type { Metadata } from 'next'
-import { Nunito } from 'next/font/google'
+import { Rubik } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
-const nunito = Nunito({ subsets: ['latin'] })
+const nunito = Rubik({
+  subsets: ['latin'],
+  weight: ['400']
+})
 
 
 export const metadata: Metadata = {
