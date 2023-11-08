@@ -109,7 +109,7 @@ function SuggestionBox(props: any) {
     return <ul className={props.classes}>
         { props.recipes.splice(0, 5).map((recipe : any) => (
             <li key={recipe.idMeal} className="px-2 py-1 text-gray-800 hover:bg-gray-100" onClick={props.handleClick}>
-            <Link href="/recipe/[id]" as={`/recipe/${recipe.idMeal}`} className="flex items-center">
+            <Link href="/recipes/[id]" as={`/recipes/${recipe.idMeal}`} className="flex items-center">
                 <img src={recipe.strMealThumb} alt="image" className="w-12 h-12 rounded" />
                 <p className="text-gray-800 ml-4">{recipe.strMeal}</p>
             </Link>

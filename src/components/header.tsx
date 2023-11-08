@@ -4,7 +4,7 @@ import Search from "./Search";
 const Header = () => {
 
    
-   return( <header className="flex flex-wrap items-center py-4 shadow-sm">
+   return( <header className="flex flex-wrap items-center py-4 sticky left-0 top-0 bg-white shadow-sm">
             <nav className="w-3/12 px-2 md:px-4 tracking-wider
             font-semibold text-gray-800">
                <Link href="/" className="px-2 flex items-center justify-center">
