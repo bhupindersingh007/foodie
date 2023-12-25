@@ -4,6 +4,7 @@ import Hero from '@/components/Hero';
 import SubHeading from '@/components/SubHeading';
 import Button from '@/components/Button';
 import Link from 'next/link'
+import IngredientList from '@/components/IngredientList';
 
 
 async function getRandomDish() {
@@ -71,32 +72,6 @@ async function Home() {
 
   const dishesData : any = await Promise.all(dishesDataPromises);
 
-  console.log(dishesData);
-
-
-
-  function getIngredientsListWithMeasure() {
-
-    let ingredients = [];
-
-    for (let i = 1; i <= 20; i++) {
-
-      if (randomDishData.meals[0][`strIngredient${i}`] && randomDishData.meals[0][`strMeasure${i}`]) {
-
-        ingredients.push(
-          <>
-            <span className="font-semibold">{randomDishData.meals[0][`strMeasure${i}`]}</span>
-            {(randomDishData.meals[0][`strMeasure${i}`]).replace(' ', '').length ? ' - ' : ' '}
-            {randomDishData.meals[0][`strIngredient${i}`]}
-          </>
-        );
-      }
-    }
-
-    return ingredients;
-  }
-
-
   return <>
     
     <Hero />
@@ -148,13 +123,10 @@ async function Home() {
 
 
           <div>
-            
             <SubHeading title="Ingredients" />
-
-            <ul className="list-disc list-inside">
-              {getIngredientsListWithMeasure().map((item, index) => <li className="pt-1" key={index}>{item}</li>)}
-            </ul>
+            <IngredientList data={randomDishData} />
           </div>
+          
         </div>
       </div>
     </section>

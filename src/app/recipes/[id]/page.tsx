@@ -1,4 +1,5 @@
 import SubHeading from "@/components/SubHeading";
+import IngredientList from "@/components/IngredientList";
 
 async function getRecipeDetails(id: number) {
 
@@ -22,28 +23,6 @@ async function RecipeDetail(props: RecipeDetailProps) {
 
     const data = await getRecipeDetails(props.params.id);
 
-
-    function getIngredientsListWithMeasure() {
-
-        let ingredients = [];
-
-        for (let i = 1; i <= 20; i++) {
-
-            if (data.meals[0][`strIngredient${i}`] && data.meals[0][`strMeasure${i}`]) {
-                
-                ingredients.push(
-                <>
-                    <span className="font-semibold">{data.meals[0][`strMeasure${i}`]}</span>
-                    { (data.meals[0][`strMeasure${i}`]).replace(' ', '').length ? ' - ' : ' '}
-                    { data.meals[0][`strIngredient${i}`] }
-                </>
-                );
-            }
-        }
-
-        return ingredients;
-    }
-
     return <>
         <article className="lg:w-11/12 lg:mx-auto my-4 md:mt-8 text-gray-800">
             <div className="md:flex md:flex-wrap mb-4">
@@ -66,10 +45,8 @@ async function RecipeDetail(props: RecipeDetailProps) {
                     <div>
                         
                         <SubHeading title="Ingredients"/>
-                        
-                        <ul className="list-disc list-inside">
-                            { getIngredientsListWithMeasure().map((item, index) => <li className="pt-1" key={index}>{item}</li>) }
-                        </ul>
+                    
+                        <IngredientList data={data} />
 
                     </div>
                 </div>
