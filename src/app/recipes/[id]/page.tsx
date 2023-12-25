@@ -54,7 +54,7 @@ async function RecipeDetail(props: RecipeDetailProps) {
                 <div className="w-full md:w-6/12 lg:w-7/12 px-4 lg:pl-8 sm:my-4">
 
                     <header className="flex items-center mb-2 mt-4 sm:mt-0">
-                        <h2 className="text-2xl md:text-3xl font-semibold tracking-wide capitalize mb-4">
+                        <h2 className="text-2xl font-semibold tracking-wide capitalize mb-4">
                             {data.meals[0].strMeal}
                         </h2>
                     </header>
@@ -63,7 +63,7 @@ async function RecipeDetail(props: RecipeDetailProps) {
                     <div>
                         <header className="flex items-center border-b pb-1.5 mb-2">
                             <img src="/img/leaf.svg" className="w-8 h-8 object-cover mr-2" />
-                            <h3 className="text-2xl font-semibold text-green-600 tracking-wider my-font">Ingredients</h3>
+                            <h3 className="text-xl font-semibold text-green-600 tracking-wider my-font">Ingredients</h3>
                         </header>
                         <ul className="list-disc list-inside">
                             { getIngredientsListWithMeasure().map((item, index) => <li className="pt-1" key={index}>{item}</li>) }
@@ -75,7 +75,7 @@ async function RecipeDetail(props: RecipeDetailProps) {
             <div className="px-4 mt-4 md:mt-2 mb-8 md:mb-12">
                 <header className="flex items-center mb-2 border-b pb-1.5 mb-2">
                     <img src="/img/leaf.svg" className="w-8 h-8 object-cover mr-2" />
-                    <h3 className="text-2xl text-green-600 font-semibold tracking-wider my-font">Instructions</h3>
+                    <h3 className="text-xl text-green-600 font-semibold tracking-wider my-font">Instructions</h3>
                 </header>
                 <p className="py-2">{data.meals[0].strInstructions}</p>
             </div>
