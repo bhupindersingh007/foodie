@@ -15,9 +15,31 @@ async function getRandomDish() {
 };
 
 
+async function getCategories() {
+
+  const res = await fetch(`${process.env.API_URL}/categories.php`);
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data')
+  }
+
+  return res.json();
+
+};
+
+
+type Category = {
+  idCategory: number,
+  strCategory: string,
+  strCategoryThumb: string
+}
+
+
 async function Home() {
 
- const data = await getRandomDish();
+  const randomDishData = await getRandomDish();
+  const categoriesData = await getCategories();
+
 
   return <main>
     <section className="mt-6 md:mb-12">
@@ -66,16 +88,44 @@ async function Home() {
           </header>
 
           <div className="sm:w-6/12 sm:mx-auto mt-2">
-            <Link href="/recipes/[id]" as={`/recipes/${data.meals[0].idMeal}`}>
-              <Card mealName={data.meals[0].strMeal} 
-                mealImg={data.meals[0].strMealThumb} />
+            <Link href="/recipes/[id]" as={`/recipes/${randomDishData.meals[0].idMeal}`}>
+              <Card mealName={randomDishData.meals[0].strMeal}
+                mealImg={randomDishData.meals[0].strMealThumb} />
             </Link>
           </div>
         </div>
       </div>
     </section>
+
+
+    {/* categories */}
+
+    <section className="mb-6">
+      <header className="flex justify-center mb-6">
+        <img src="/img/leaf.svg" className="w-8 h-8 object-cover mr-2" />
+        <h1 className="text-2xl font-semibold tracking-wider text-green-600 my-font">
+          Categories
+        </h1>
+      </header>
+      <div className="sm:flex sm:flex-wrap md:w-11/12 md:mx-auto mb-6">
+        {categoriesData.categories.slice(0, 8).map(
+          (category: Category) =>
+            <div key={category.idCategory} className="w-full sm:w-6/12 md:w-4/12 lg:w-3/12 my-2 px-2">
+              <Link href="/dishes/[name]" as={`/dishes/${category.strCategory}`}>
+                <Card mealName={category.strCategory} mealImg={category.strCategoryThumb} />
+              </Link>
+            </div>
+        )}
+      </div>
+
+      <div className="text-center">
+        <a className="bg-green-600 text-white px-8 py-2.5 rounded tracking-wider">See More</a>
+      </div>
+
+    </section>
+
   </main>
-    ;
+
 
 }
 
