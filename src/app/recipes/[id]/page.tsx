@@ -32,7 +32,7 @@ async function RecipeDetail(props: RecipeDetailProps) {
                 ingredients.push(
                 <>
                     <span className="font-semibold">{data.meals[0][`strMeasure${i}`]}</span>
-                    { ' - ' } 
+                    { (data.meals[0][`strMeasure${i}`]).replace(' ', '').length ? ' - ' : ' '}
                     { data.meals[0][`strIngredient${i}`] }
                 </>
                 );
