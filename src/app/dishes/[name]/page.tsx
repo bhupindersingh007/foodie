@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Card from "@/components/Card";
+import Heading from "@/components/Heading";
 
 async function getDishes(name : string) {
   
@@ -28,12 +29,8 @@ async function Dishes(props : DishesProp) {
    const data = await getDishes(props.params.name);
 	  
    return <div className="mt-8 md:mt-12">
-           <header className="flex justify-center mb-6">
-           <img src="/img/leaf.svg" className="w-8 h-8 object-cover mr-2" />
-           <h1 className="text-2xl font-semibold tracking-wider my-font text-green-600">
-               {props.params.name} Dishes
-           </h1>
-         </header>
+
+         <Heading title={ `${props.params.name} Dishes` } />
 
            <div className="sm:flex sm:flex-wrap md:w-11/12 md:mx-auto mb-6">
            {  data.meals.map((food : Food) => 

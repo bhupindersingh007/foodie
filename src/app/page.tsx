@@ -1,4 +1,5 @@
 import Card from '@/components/Card';
+import Heading from '@/components/Heading';
 import Hero from '@/components/Hero';
 import Link from 'next/link'
 
@@ -101,12 +102,9 @@ async function Home() {
     {/* categories */}
 
     <section className="mb-14">
-      <header className="flex justify-center mb-6">
-        <img src="/img/leaf.svg" className="w-8 h-8 object-cover mr-2" />
-        <h1 className="text-2xl font-semibold tracking-wider text-green-600 my-font">
-          Categories
-        </h1>
-      </header>
+      
+      <Heading title="Categories" />
+
       <div className="flex flex-wrap md:w-11/12 md:mx-auto mb-8">
         {categoriesData.categories.slice(0, 12).map(
           (category: Category) =>
@@ -130,12 +128,7 @@ async function Home() {
 
     <section className="mt-6 md:mb-12">
 
-      <header className="flex justify-center mb-8">
-        <img src="img/leaf.svg" className="w-8 h-8 object-cover mr-2" />
-        <h1 className="text-2xl font-semibold tracking-wide text-green-600 my-font">
-          Dish of the Day
-        </h1>
-      </header>
+      <Heading title="Dish of the Day" />
 
       <div className="md:flex md:flex-wrap md:w-11/12 md:mx-auto mb-4">
 
@@ -171,12 +164,8 @@ async function Home() {
     {/* most loved dishes */}
 
     <section className="mb-12">
-      <header className="flex justify-center mb-6">
-        <img src="/img/leaf.svg" className="w-8 h-8 object-cover mr-2" />
-        <h1 className="text-2xl font-semibold tracking-wider my-font text-green-600">
-          Most Loved Dishes
-        </h1>
-      </header>
+
+      <Heading title="Most Loved Dishes" />
 
       <div className="sm:flex sm:flex-wrap md:w-11/12 md:mx-auto mb-6">
 
