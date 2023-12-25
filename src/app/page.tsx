@@ -93,7 +93,7 @@ async function Home() {
   }
 
 
-  return <main>
+  return <>
     <section className="mb-6 md:mb-12">
       <div className="flex flex-wrap md:items-center">
 
@@ -220,7 +220,7 @@ async function Home() {
 
     </section>
 
-  </main>
+  </>
 
 
 }
