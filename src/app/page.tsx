@@ -72,8 +72,8 @@ async function Home() {
 
         ingredients.push(
           <>
-            <span className="font-semibold">{randomDishData.meals[0][`strMeasure${i}`] }</span>
-            { (randomDishData.meals[0][`strMeasure${i}`]).replace(' ', '').length ? ' - ' : ' '}
+            <span className="font-semibold">{randomDishData.meals[0][`strMeasure${i}`]}</span>
+            {(randomDishData.meals[0][`strMeasure${i}`]).replace(' ', '').length ? ' - ' : ' '}
             {randomDishData.meals[0][`strIngredient${i}`]}
           </>
         );
@@ -85,31 +85,35 @@ async function Home() {
 
 
   return <main>
-    <section className="mt-6 md:mb-12">
+    <section className="mb-6 md:mb-12">
       <div className="flex flex-wrap md:items-center">
-        <div className="w-full md:w-1/2 px-4 my-2 md:my-0 order-2 md:order-none">
-          <div className="md:px-6 lg:px-12 py-6">
-            <div className="flex items-center mb-2">
-              <img src="img/hat.svg" alt="hat" className="w-20 h-20 
-             sm:w-24 sm:h-24 object-cover" />
-              <h2 className="text-3xl md:text-5xl ml-2 font-semibold
-             tracking-wider text-green-600 my-font">foodie</h2>
-            </div>
-            <h2 className="text-2xl md:text-3xl text-gray-800 font-semibold mb-2">
-              Don't just be foodie, make tasty food</h2>
-            <p className="text-lg mb-6 text-gray-600">Foodie is a collection of 200+
-              unique recipes.So, don't just be foodie, make tasty food</p>
 
-            <Link href="/categories" className="bg-green-600 text-white px-8 py-2.5 rounded
-         tracking-wider hover:bg-green-700">
+        <div className="w-full md:w-6/12">
+          <div style={{ backgroundImage: "url('/img/dishes-2.jpg')" }}
+            className="py-48 md:py-64 ml-4 md:ml-0 bg-cover rounded-b"></div>
+        </div>
+
+        <div className="w-full md:w-6/12 px-4">
+          <div className="md:px-6 lg:px-12 py-6">
+
+            <div className="flex items-center mb-3">
+              <img src="img/hat.svg" alt="hat" className="w-20 h-20 sm:w-24 sm:h-24 object-cover" />
+              <h2 className="text-3xl md:text-5xl ml-2 font-semibold tracking-wider text-green-600 my-font">foodie</h2>
+            </div>
+
+            <h2 className="text-2xl md:text-3xl text-gray-800 font-semibold mb-4">
+              Don't just be foodie, make tasty food</h2>
+
+            <p className="text-xl mb-6 text-gray-600 mb-8">Foodie is a collection of 200+
+              unique recipes. So, don't just be foodie, make tasty food.</p>
+
+            <Link href="/categories" className="bg-green-600 text-white px-8 py-2.5 rounded 
+            tracking-wider hover:bg-green-700">
               Explore
             </Link>
           </div>
         </div>
-        <div className="w-full md:w-1/2 my-2 md:my-0 order-1 md:order-none ">
-          <div style={{ backgroundImage: "url('/img/dishes-2.jpg')" }}
-            className="py-48 md:py-64 ml-2 md:ml-0 bg-cover rounded-bl rounded-tl"></div>
-        </div>
+
       </div>
     </section>
 
