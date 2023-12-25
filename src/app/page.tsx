@@ -1,6 +1,7 @@
 import Card from '@/components/Card';
 import Heading from '@/components/Heading';
 import Hero from '@/components/Hero';
+import SubHeading from '@/components/SubHeading';
 import Link from 'next/link'
 
 
@@ -147,10 +148,9 @@ async function Home() {
 
 
           <div>
-            <header className="flex items-center border-b pb-1.5 mb-2">
-              <img src="/img/leaf.svg" className="w-8 h-8 object-cover mr-2" />
-              <h3 className="text-xl font-semibold text-green-600 tracking-wider my-font">Ingredients</h3>
-            </header>
+            
+            <SubHeading title="Ingredients" />
+
             <ul className="list-disc list-inside">
               {getIngredientsListWithMeasure().map((item, index) => <li className="pt-1" key={index}>{item}</li>)}
             </ul>
