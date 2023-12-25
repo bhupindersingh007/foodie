@@ -119,7 +119,7 @@ async function Home() {
       </div>
 
       <div className="text-center">
-        <a className="bg-green-600 text-white px-8 py-2.5 rounded tracking-wider">See More</a>
+        <a href="/categories" className="bg-green-600 text-white px-8 py-2.5 rounded tracking-wider">See More</a>
       </div>
 
     </section>
