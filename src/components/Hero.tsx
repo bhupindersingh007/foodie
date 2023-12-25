@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Button from './Button'
 
 export default function Hero() {
 
@@ -28,10 +29,7 @@ export default function Hero() {
                     <p className="text-xl mb-6 text-gray-600 mb-8">Foodie is a collection of 200+
                         unique recipes. So, don't just be foodie, make tasty food.</p>
 
-                    <Link href="/categories" 
-                    className="bg-green-600 text-white px-8 py-2.5 rounded  tracking-wider hover:bg-green-700">
-                        Explore
-                    </Link>
+                    <Button href="/categories" title="Explore" />
                 </div>
             </div>
 

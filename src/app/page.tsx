@@ -2,6 +2,7 @@ import Card from '@/components/Card';
 import Heading from '@/components/Heading';
 import Hero from '@/components/Hero';
 import SubHeading from '@/components/SubHeading';
+import Button from '@/components/Button';
 import Link from 'next/link'
 
 
@@ -118,8 +119,7 @@ async function Home() {
       </div>
 
       <div className="text-center">
-        <a href="/categories" className="bg-green-600 text-white px-8 py-2.5 rounded
-         tracking-wider hover:bg-green-700">See More</a>
+        <Button href="/categories" title="See More" />
       </div>
 
     </section>
