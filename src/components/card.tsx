@@ -10,7 +10,7 @@ const Card = (props : CardProps) => {
      return <article className="border rounded p-1 hover:shadow hover:border-0">
             <img src={props.mealImg} alt={props.mealName} 
 			className="w-full object-cover rounded lozad" />
-            <h3 className="text-gray-800 text-center text-lg px-3 pt-3 pb-2 truncate">{props.mealName}</h3>
+            <h3 className="text-gray-700 text-center text-lg px-3 pt-3 pb-2 truncate">{props.mealName}</h3>
           </article>;
 	
 	
