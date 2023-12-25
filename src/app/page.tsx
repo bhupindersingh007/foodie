@@ -27,19 +27,19 @@ async function getCategories() {
 
 };
 
-async function getDishes() {
 
-  const name = 'Dessert';
+async function getRecipeDetails(id: number) {
 
-  const res = await fetch(`${process.env.API_URL}/filter.php?c=${name}`);
+  const res = await fetch(`${process.env.API_URL}/lookup.php?i=${id}`);
 
   if (!res.ok) {
-    throw new Error('Failed to fetch data')
+      throw new Error('Failed to fetch data');
   }
 
   return res.json();
 
-};
+}
+
 
 type Food = {
   idMeal: number,
@@ -60,7 +60,16 @@ async function Home() {
 
   const randomDishData = await getRandomDish();
   const categoriesData = await getCategories();
-  const dishesData = await getDishes();
+
+  const dishesId = [52843, 52795, 52958, 52989, 52973, 53082, 53051, 52852];
+
+  const dishesDataPromises = dishesId.map((dishId) => getRecipeDetails(dishId));
+
+  const dishesData : any = await Promise.all(dishesDataPromises);
+
+  console.log(dishesData);
+
+
 
   function getIngredientsListWithMeasure() {
 
@@ -189,6 +198,7 @@ async function Home() {
 
 
     {/* most loved dishes */}
+
     <section className="mb-12">
       <header className="flex justify-center mb-6">
         <img src="/img/leaf.svg" className="w-8 h-8 object-cover mr-2" />
@@ -198,13 +208,14 @@ async function Home() {
       </header>
 
       <div className="sm:flex sm:flex-wrap md:w-11/12 md:mx-auto mb-6">
-        {dishesData.meals.slice(16, 24).map((food: Food) =>
-          <div key={food.idMeal} className="w-full sm:w-6/12 md:w-4/12 lg:w-3/12 my-2 px-2">
-            <Link href="/recipes/[id]" as={`/recipes/${food.idMeal}`}>
-              <Card mealName={food.strMeal} mealImg={food.strMealThumb} />
+
+       { dishesData.map((dish: any) =>
+          <div key={dish.meals[0].idMeal} className="w-full sm:w-6/12 md:w-4/12 lg:w-3/12 my-2 px-2">
+            <Link href="/recipes/[id]" as={`/recipes/${dish.meals[0].idMeal}`}>
+              <Card mealName={dish.meals[0].strMeal} mealImg={dish.meals[0].strMealThumb} />
             </Link>
-          </div>)
-        }
+        </div>)}
+
       </div>
 
     </section>
