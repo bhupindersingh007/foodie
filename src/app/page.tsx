@@ -82,14 +82,14 @@ async function Home() {
       
       <Heading title="Categories" />
 
-      <div className="flex flex-wrap md:w-11/12 md:mx-auto mb-8">
+      <div className="flex flex-wrap md:w-11/12 md:mx-auto mb-8 px-2">
         {categoriesData.categories.slice(0, 12).map(
           (category: Category) =>
-            <div key={category.idCategory} className="w-1/2 sm:w-4/12 lg:w-2/12 my-2 px-2">
+            (<div key={category.idCategory} className="w-1/2 sm:w-4/12 lg:w-2/12 mb-4 px-2">
               <Link href="/dishes/[name]" as={`/dishes/${category.strCategory}`}>
                 <Card mealName={category.strCategory} mealImg={category.strCategoryThumb} />
               </Link>
-            </div>
+            </div>)
         )}
       </div>
 
@@ -106,7 +106,7 @@ async function Home() {
 
       <Heading title="Dish of the Day" />
 
-      <div className="md:flex md:flex-wrap md:w-11/12 md:mx-auto mb-4">
+      <div className="md:flex md:flex-wrap md:w-11/12 md:mx-auto mb-4 px-2">
 
         <div className="w-full md:w-6/12 lg:w-5/12 px-4 sm:my-4">
           <img src={randomDishData.meals[0].strMealThumb} alt={randomDishData.meals[0].strMeal}
@@ -139,10 +139,10 @@ async function Home() {
 
       <Heading title="Most Loved Dishes" />
 
-      <div className="sm:flex sm:flex-wrap md:w-11/12 md:mx-auto mb-6">
+      <div className="sm:flex sm:flex-wrap md:w-11/12 md:mx-auto mb-6 px-2">
 
        { dishesData.map((dish: any) =>
-          <div key={dish.meals[0].idMeal} className="w-full sm:w-6/12 md:w-4/12 lg:w-3/12 my-2 px-2">
+          <div key={dish.meals[0].idMeal} className="w-full sm:w-6/12 md:w-4/12 lg:w-3/12 mb-4 px-2">
             <Link href="/recipes/[id]" as={`/recipes/${dish.meals[0].idMeal}`}>
               <Card mealName={dish.meals[0].strMeal} mealImg={dish.meals[0].strMealThumb} />
             </Link>

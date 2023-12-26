@@ -32,9 +32,9 @@ async function Dishes(props : DishesProp) {
 
          <Heading title={ `${props.params.name} Dishes` } />
 
-           <div className="sm:flex sm:flex-wrap md:w-11/12 md:mx-auto mb-6">
+           <div className="sm:flex sm:flex-wrap md:w-11/12 md:mx-auto mb-6 px-2">
            {  data.meals.map((food : Food) => 
-                <div key={food.idMeal} className="w-full sm:w-6/12 md:w-4/12 lg:w-3/12 my-2 px-2">
+                <div key={food.idMeal} className="w-full sm:w-6/12 md:w-4/12 lg:w-3/12 mb-4 px-2">
                     <Link href="/recipes/[id]" as={`/recipes/${food.idMeal}`}>
                         <Card mealName={food.strMeal} mealImg={food.strMealThumb}  />
                     </Link>
