@@ -26,8 +26,11 @@ export default function IngredientList(props: IngredientListProps) {
     }
 
 
-    return <ul className="list-disc list-inside">
-        {getIngredientsListWithMeasure().map((ingredient, index) => <li className="pt-1" key={index}>{ingredient}</li>)}
-    </ul>
+    return (
+
+        <ul className="list-disc list-inside">
+            { getIngredientsListWithMeasure().map((ingredient, index) => (<li className="pt-1" key={index}>{ingredient}</li>)) }
+        </ul>
+    );
 
 }
