@@ -39,13 +39,13 @@ async function RecipeDetail(props: RecipeDetailProps) {
                 <div className="w-full md:w-6/12 lg:w-7/12 px-4 lg:pl-8 sm:my-4">
 
 
-                    <header className="sm:flex items-center justify-between mb-4 mt-4 sm:mt-0">
+                    <header className="sm:flex mb-4 mt-4 sm:mt-0">
 
-                        <h2 className="text-2xl font-semibold tracking-wide capitalize">
+                        <h2 className="text-2xl font-semibold tracking-wide capitalize sm:w-10/12 mb-2 sm:mb-0">
                             {data.meals[0].strMeal}
                         </h2>
 
-                        <div>
+                        <div className="sm:w-2/12 sm:text-end pt-2">
                             <button className="text-gray-800 me-2">
                             <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" 
                             strokeLinecap="round" strokeLinejoin="round">
