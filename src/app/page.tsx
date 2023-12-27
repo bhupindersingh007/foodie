@@ -5,6 +5,8 @@ import SubHeading from '@/components/SubHeading';
 import Button from '@/components/Button';
 import Link from 'next/link'
 import IngredientList from '@/components/IngredientList';
+import Badge from '@/components/Badge';
+import Clock from '@/components/Clock';
 
 
 async function getRandomDish() {
@@ -102,15 +104,17 @@ async function Home() {
 
     {/* dish of the day */}
 
-    <section className="mt-6 md:mb-12">
+    <section className="mt-6 mb-12">
 
       <Heading title="Dish of the Day" />
 
       <div className="md:flex md:flex-wrap md:w-11/12 md:mx-auto mb-4 px-2">
 
         <div className="w-full md:w-6/12 lg:w-5/12 px-4 sm:my-4">
+          <Link href={ `/recipes/${randomDishData.meals[0].idMeal}` }>
           <img src={randomDishData.meals[0].strMealThumb} alt={randomDishData.meals[0].strMeal}
             className="rounded w-full object-cover shadow-sm" />
+            </Link>
         </div>
 
         <div className="w-full md:w-6/12 lg:w-7/12 px-4 lg:pl-8 sm:my-4">
@@ -122,13 +126,32 @@ async function Home() {
           </header>
 
 
-          <div>
+
+          <div className="mb-6">
+
+            <Link href={`/dishes/${randomDishData.meals[0].strCategory}`}>
+                <Badge title={randomDishData.meals[0].strCategory} />                        
+            </Link>
+
+            <Badge title={ randomDishData.meals[0].strArea }  />
+
+            </div>
+
+            <div className="flex mb-6">
+
+            <Clock title="Prep: 10 mins" />
+            <Clock title="Total: 1 hr 02 mins" />
+
+            </div>
+
             <SubHeading title="Ingredients" />
             <IngredientList data={randomDishData} />
+            
+
             <div className="mt-8">
               <Button href={ `/recipes/${randomDishData.meals[0]['idMeal']}` } title="View Recipe" />
             </div>
-          </div>
+
           
         </div>
       </div>
