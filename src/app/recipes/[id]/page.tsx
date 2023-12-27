@@ -1,6 +1,7 @@
 import SubHeading from "@/components/SubHeading";
 import IngredientList from "@/components/IngredientList";
 import Link from "next/link";
+import Badge from "@/components/Badge";
 
 async function getRecipeDetails(id: number) {
 
@@ -69,14 +70,10 @@ async function RecipeDetail(props: RecipeDetailProps) {
                     <div className="mb-6">
 
                         <Link href={`/dishes/${data.meals[0].strCategory}`}>
-                            <span className="bg-green-100 text-green-900 px-1 py-px rounded text-sm me-1">
-                                {data.meals[0].strCategory}
-                            </span>
+                            <Badge title={data.meals[0].strCategory} />                        
                         </Link>
-
-                        <span className="bg-green-100 text-green-900 px-1 py-px rounded text-sm">
-                                {data.meals[0].strArea}
-                        </span>
+                        
+                        <Badge title={ data.meals[0].strArea }  />
 
                     </div>
 
