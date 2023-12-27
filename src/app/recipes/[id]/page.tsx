@@ -116,7 +116,7 @@ async function RecipeDetail(props: RecipeDetailProps) {
 
                 <SubHeading title="Instructions" />
 
-                <p className="py-2">{data.meals[0].strInstructions}</p>
+                <p className="py-2 whitespace-pre-wrap leading-relaxed">{data.meals[0].strInstructions}</p>
             </div>
         </article>
 
