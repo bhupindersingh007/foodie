@@ -24,8 +24,6 @@ async function RecipeDetail(props: RecipeDetailProps) {
 
     const data = await getRecipeDetails(props.params.id);
 
-    console.log(data)
-
     return <>
         <article className="lg:w-11/12 lg:mx-auto my-4 md:mt-8 text-gray-800">
             <div className="md:flex md:flex-wrap mb-4">
