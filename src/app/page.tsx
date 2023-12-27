@@ -125,6 +125,9 @@ async function Home() {
           <div>
             <SubHeading title="Ingredients" />
             <IngredientList data={randomDishData} />
+            <div className="mt-8">
+              <Button href={ `/recipes/${randomDishData.meals[0]['idMeal']}` } title="View Recipe" />
+            </div>
           </div>
           
         </div>
