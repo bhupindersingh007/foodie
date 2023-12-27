@@ -26,9 +26,14 @@ export default function IngredientList(props: IngredientListProps) {
     }
 
 
+    let classes =  getIngredientsListWithMeasure().length >= 9 
+        ? 'list-disc list-inside ps-3 md:columns-2' 
+        : 'list-disc list-inside ps-3'
+
+
     return (
 
-        <ul className="list-disc list-inside ps-3">
+        <ul className={classes}>
             { getIngredientsListWithMeasure().map((ingredient, index) => (<li className="pt-1" key={index}>{ingredient}</li>)) }
         </ul>
     );
