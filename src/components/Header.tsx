@@ -22,10 +22,21 @@ export default function Header() {
                <Search />
             </div>
 
-            <div className="w-3/12 hidden md:block">
-               <Link href="/categories" className="px-2 text-md text-gray-600 text-center tracking-wider block">
-                  Categories
+            <div className="w-3/12 hidden md:block text-center">
+               
+               {/* bookmarks */}
+
+               <Link href="/bookmarks" className="inline-flex items-center text-gray-700 mt-1">
+                  
+                  <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" 
+                  strokeLinecap="round" strokeLinejoin="round">
+                     <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                  
+                  <span className="ms-1">My Bookmarks</span>
+
                </Link>
+
             </div>
          </nav>
 
