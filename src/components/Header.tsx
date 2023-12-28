@@ -6,7 +6,7 @@ export default function Header() {
 
    return (
 
-      <header className="sticky left-0 top-0 bg-white border-b">
+      <header className="sticky left-0 top-0 bg-white border-b print:hidden">
 
          <nav className="flex flex-wrap items-center py-3.5 md:w-11/12 md:mx-auto">
 

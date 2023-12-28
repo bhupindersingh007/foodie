@@ -46,7 +46,8 @@ async function RecipeDetail(props: RecipeDetailProps) {
                             {data.meals[0].strMeal}
                         </h2>
 
-                        <div className="sm:w-2/12 sm:text-end pt-2">
+                        <div className="sm:w-2/12 sm:text-end pt-2 print:hidden">
+
                             <button className="text-gray-800 me-2">
                             <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" 
                             strokeLinecap="round" strokeLinejoin="round">
@@ -54,7 +55,6 @@ async function RecipeDetail(props: RecipeDetailProps) {
                             </button>
                             
                             <PrintButton />
-
 
                         </div>
 
@@ -96,7 +96,7 @@ async function RecipeDetail(props: RecipeDetailProps) {
             </div>
         </article>
 
-        <div className="w-11/12 sm:w-7/12 md:w-1/2 mx-auto mb-6">
+        <div className="w-11/12 sm:w-7/12 md:w-1/2 mx-auto mb-6 print:hidden">
             <iframe src={`https://www.youtube.com/embed/${data.meals[0].strYoutube.slice(-11)}`}
                 className="w-full h-96 rounded">
             </iframe>
