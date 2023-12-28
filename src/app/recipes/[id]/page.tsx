@@ -34,7 +34,7 @@ async function RecipeDetail(props: RecipeDetailProps) {
                 <div className="w-full md:w-6/12 lg:w-5/12 px-4 sm:my-4">
                     <img src={data.meals[0].strMealThumb}
                         alt={data.meals[0].strMeal}
-                        className="rounded w-full object-cover" />
+                        className="rounded w-full object-cover max-h-96 md:max-h-none" />
                 </div>
 
                 <div className="w-full md:w-6/12 lg:w-7/12 px-4 lg:pl-8 sm:my-4">

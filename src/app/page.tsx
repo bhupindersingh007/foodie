@@ -113,7 +113,7 @@ async function Home() {
         <div className="w-full md:w-6/12 lg:w-5/12 px-4 sm:my-4">
           <Link href={ `/recipes/${randomDishData.meals[0].idMeal}` }>
           <img src={randomDishData.meals[0].strMealThumb} alt={randomDishData.meals[0].strMeal}
-            className="rounded w-full object-cover shadow-sm" />
+            className="rounded w-full object-cover max-h-96 md:max-h-none" />
             </Link>
         </div>
 
