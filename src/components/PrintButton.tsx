@@ -7,7 +7,7 @@ export default function PrintButton() {
 
     return (
 
-        <button className="text-gray-800" onClick={ handleClick }>
+        <button className="text-gray-800" onClick={ handleClick } title="Print">
             <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2"
                 fill="none" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="6 9 6 2 18 2 18 9"></polyline>

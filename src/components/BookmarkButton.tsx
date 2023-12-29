@@ -77,7 +77,7 @@ export default function BookmarkButton(props: BookmarkButtonProps) {
         <>
             {showAlert ? <Alert /> : ''}
 
-            <button className="text-gray-800 me-2" onClick={handleClick}>
+            <button className="text-gray-800 me-2" onClick={handleClick} title="Bookmark">
                 <svg className={isBookmarked ? 'fill-green-600 stroke-green-600' : ''}
                     viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none"
                     strokeLinecap="round" strokeLinejoin="round">
