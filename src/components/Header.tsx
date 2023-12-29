@@ -33,12 +33,7 @@ export default function Header() {
                      <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
                   </svg>
                   
-                  <span className="ms-1">
-                     My Bookmarks 
-                     <sup>
-                        <span className="bg-green-600 py-px px-1 text-white rounded-full ms-0.5">2</span>
-                     </sup>
-                  </span>
+                  <span className="ms-1">My Bookmarks</span>
 
                </Link>
 
