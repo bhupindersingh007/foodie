@@ -9,15 +9,14 @@ type BookmarkButtonProps = {
 
 export default function BookmarkButton(props: BookmarkButtonProps) {
 
+    const recipeId = props.recipeId.toString();
+
     const [isBookmarked, setBookmark] = useState(false);
     const [showAlert, setAlert] = useState(false);
 
-    const hideAlert = () => setTimeout(() => setAlert(false), 2000)
+    const hideAlert = () => setTimeout(() => setAlert(false), 2000);
 
     useEffect(() => {
-
-        const recipeId = props.recipeId.toString();
-
 
         if (localStorage.bookmarks) {
 
@@ -27,46 +26,40 @@ export default function BookmarkButton(props: BookmarkButtonProps) {
 
         }
 
-    })
+    });
 
-
-    const handleClick = () => {
-
-        const recipeId = props.recipeId.toString();
-
-        // no bookmarks
-
-        if (!localStorage.bookmarks) {
-
-
-            localStorage.setItem('bookmarks', JSON.stringify([recipeId]));
-            setBookmark(true);
-            setAlert(true);
-            hideAlert();
-            return;
-
-        }
-
-        let bookmarks = JSON.parse(localStorage.bookmarks);
-
-        // remove, recipe already in bookmarks
-
-        if (bookmarks.indexOf(recipeId) != -1) {
-
-            bookmarks = bookmarks.filter((bookmark: string) => bookmark != recipeId);
-            localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-            setBookmark(false);
-            return;
-
-        }
-
-        // add new recipe in bookmarks  
-
-        bookmarks.push(recipeId);
+    const addBookmark = (bookmarks: any) => {
+     
         localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
         setBookmark(true);
         setAlert(true);
         hideAlert();
+        
+    }
+
+
+    const handleClick = () => {
+
+        let bookmarks = JSON.parse(localStorage.bookmarks);
+
+        if (!localStorage.bookmarks) {
+
+            addBookmark([recipeId]);
+            return;
+        }
+
+
+        if (bookmarks.indexOf(recipeId) != -1) {
+
+            bookmarks = bookmarks.filter((bookmark: string) => bookmark != recipeId);
+            addBookmark(bookmarks);
+            setBookmark(false);
+            return;
+            
+        }
+
+        bookmarks.push(recipeId);
+        addBookmark(bookmarks)
 
     };
 
