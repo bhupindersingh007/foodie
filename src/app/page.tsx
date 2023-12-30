@@ -7,6 +7,7 @@ import Link from 'next/link'
 import IngredientList from '@/components/IngredientList';
 import Badge from '@/components/Badge';
 import Clock from '@/components/Clock';
+import BookmarkButton from '@/components/BookmarkButton';
 
 
 async function getRandomDish() {
@@ -119,10 +120,13 @@ async function Home() {
 
         <div className="w-full md:w-6/12 lg:w-7/12 px-4 lg:pl-8 sm:my-4">
 
-          <header className="flex items-center mb-2 mt-4 sm:mt-0">
-            <h2 className="text-2xl md:text-2xl font-semibold tracking-wide capitalize text-gray-700 mb-4">
+          <header className="md:flex md:justify-between md:items-center mb-2 mt-4 sm:mt-0 mb-4">
+
+            <h2 className="text-2xl md:text-2xl font-semibold tracking-wide capitalize text-gray-700 mb-2 md:mb-0">
               {randomDishData.meals[0].strMeal}
             </h2>
+
+            <BookmarkButton recipeId={ randomDishData.meals[0].idMeal } />
           </header>
 
 
