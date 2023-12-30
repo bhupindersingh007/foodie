@@ -31,20 +31,20 @@ export default function BookmarkButton(props: BookmarkButtonProps) {
     const addBookmark = (bookmarks: any) => {
      
         localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-        setBookmark(true);
-        setAlert(true);
-        hideAlert();
         
     }
 
 
     const handleClick = () => {
 
-        let bookmarks = JSON.parse(localStorage.bookmarks);
+        let bookmarks = localStorage.bookmarks == null ? [] : JSON.parse(localStorage.bookmarks);
 
         if (!localStorage.bookmarks) {
 
             addBookmark([recipeId]);
+            setBookmark(true);
+            setAlert(true);
+            hideAlert();
             return;
         }
 
@@ -59,7 +59,10 @@ export default function BookmarkButton(props: BookmarkButtonProps) {
         }
 
         bookmarks.push(recipeId);
-        addBookmark(bookmarks)
+        addBookmark(bookmarks);
+        setBookmark(true);
+        setAlert(true);
+        hideAlert();
 
     };
 

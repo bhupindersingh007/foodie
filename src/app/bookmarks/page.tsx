@@ -48,7 +48,7 @@ class Bookmarks extends Component<{}, BookmarksState> {
 
     async getBookmarkedRecipes() {
 
-        const bookmarks = JSON.parse(localStorage.bookmarks);
+        const bookmarks = localStorage.bookmarks == null ? [] : JSON.parse(localStorage.bookmarks);
 
         const dishesDataPromises = bookmarks.map((bookmark: any) => this.getRecipeDetails(bookmark));
 
