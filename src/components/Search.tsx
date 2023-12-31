@@ -3,18 +3,6 @@
 import { Component } from 'react';
 import SuggestionBox from './SuggestionBox';
 
-async function searchDishes(query: string) {
-
-    const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`);
-
-    if (!res.ok) {
-        throw new Error('Failed to fetch data')
-    }
-
-    return res.json();
-
-};
-
 
 type SearchState = {
     query: string,
@@ -58,7 +46,9 @@ class Search extends Component<{}, SearchState> {
             return null;
         }
 
-        const data = await searchDishes(this.state.query);
+        const res = await fetch(`api/search?query=${this.state.query}`);
+        const data = await res.json();
+
         this.setState({ recipes: data.meals });
 
     }
