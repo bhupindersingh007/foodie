@@ -27,17 +27,14 @@ class Bookmarks extends Component<{}, BookmarksState> {
 
         let data = await this.getBookmarkedRecipes();
 
-        console.log(data);
-
         this.setState({ dishesData: data });
-
 
     }
 
 
     async getRecipeDetails(id: number) {
 
-        const res = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+        const res = await fetch(`api/lookup?id=${id}`);
 
         const data = await res.json();
 
