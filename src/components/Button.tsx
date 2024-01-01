@@ -11,7 +11,9 @@ export default function Button(props: ButtonProps) {
     return (
 
         <Link href={props.href}
-            className="bg-green-600 text-white px-8 py-2.5 rounded tracking-wider hover:bg-green-700">
+            className="bg-green-600 text-white text-lg px-9 py-3 rounded-full 
+            transition-shadow transition-colors duration-100 tracking-wider 
+            hover:bg-green-700 hover:shadow-sm">
             {props.title}
         </Link>
 

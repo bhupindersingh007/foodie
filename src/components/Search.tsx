@@ -69,7 +69,7 @@ class Search extends Component<{}, SearchState> {
                 <form>
                     <input onChange={this.handleChange}
                         value={this.state.query} type="search" placeholder="Search..."
-                        className="block w-full border border-gray-300 px-10 py-2 rounded focus:outline-none focus:shadow" />
+                        className="block w-full border border-gray-300 px-10 py-2 rounded-full focus:outline-none focus:shadow" />
                 </form>
 
 
