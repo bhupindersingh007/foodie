@@ -9,7 +9,7 @@ export default function Hero() {
             <div className="flex flex-wrap md:items-center">
 
                 <div className="w-full md:w-6/12">
-                    <div style={{ backgroundImage: "url('/img/dishes-2.jpg')" }}
+                    <div style={{ backgroundImage: "url('/img/hero.jpg')" }}
                         className="py-48 md:py-64 bg-cover md:rounded-b shadow-sm"></div>
                 </div>
 
