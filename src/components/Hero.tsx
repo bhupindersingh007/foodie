@@ -20,13 +20,13 @@ export default function Hero() {
 
                         <div className="inline-flex items-center mb-3">
                             <img src="img/hat.svg" alt="foodie" className="w-20 h-20 sm:w-24 sm:h-24 object-cover" />
-                            <h2 className="text-4xl md:text-5xl ml-2 font-semibold tracking-wider text-green-600 my-font">
+                            <h2 className="text-4xl md:text-6xl ml-2 font-semibold tracking-wider text-green-600 font-shadows">
                                 foodie
                             </h2>
                         </div>
 
-                        <h2 className="text-3xl text-gray-800 font-semibold mb-4 leading-normal">
-                            Don't just be foodie, make tasty food</h2>
+                        <h2 className="text-3xl text-gray-800 font-semibold mb-3 leading-normal">
+                            Don't just be foodie, make tasty food.</h2>
 
                         <p className="text-xl mb-6 text-gray-600 mb-8 leading-normal">Foodie is a collection of 200+
                             unique recipes. So, don't just be foodie, make tasty food.</p>

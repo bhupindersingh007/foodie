@@ -19,7 +19,7 @@ export default function Header() {
                <Link href="/" className="px-2 flex items-center">
                   <img src="/img/hat.svg" alt="logo" className="w-10 h-10 object-cover inline-block" />
                   <h2 className="ml-1 text-2xl tracking-wider
-                  text-green-600 tracking-wider">foodie</h2>
+                  text-green-600 tracking-wider font-shadows">foodie</h2>
                </Link>
             </div>
 
