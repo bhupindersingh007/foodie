@@ -47,7 +47,7 @@ async function RecipeDetail(props: RecipeDetailProps) {
                             {data.meals[0].strMeal}
                         </h2>
 
-                        <div className="sm:w-2/12 sm:justify-end pt-2 ps-1 print:hidden flex">
+                        <div className="sm:w-2/12 sm:justify-end pt-1 ps-1 print:hidden flex">
 
                             <BookmarkButton recipeId={data.meals[0].idMeal} />
                             
