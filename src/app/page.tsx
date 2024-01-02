@@ -126,7 +126,7 @@ async function Home() {
               {randomDishData.meals[0].strMeal}
             </h2>
 
-            <div className="mt-2 md:mt-0">
+            <div className="mt-1 md:mt-0">
             <BookmarkButton recipeId={ randomDishData.meals[0].idMeal } />
             </div>
           </header>
