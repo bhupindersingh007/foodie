@@ -34,7 +34,7 @@ class Bookmarks extends Component<{}, BookmarksState> {
 
     async getRecipeDetails(id: number) {
 
-        const res = await fetch(`api/lookup?id=${id}`);
+        const res = await fetch(`/api/lookup?id=${id}`);
 
         const data = await res.json();
 

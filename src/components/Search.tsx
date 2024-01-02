@@ -46,7 +46,7 @@ class Search extends Component<{}, SearchState> {
             return null;
         }
 
-        const res = await fetch(`api/search?query=${this.state.query}`);
+        const res = await fetch(`/api/search?query=${this.state.query}`);
         const data = await res.json();
 
         this.setState({ recipes: data.meals });
