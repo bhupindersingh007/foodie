@@ -31,9 +31,9 @@ export default async function Categories() {
 
             <Heading title="Categories" />
             
-            <div className="sm:flex sm:flex-wrap md:w-11/12 md:mx-auto mb-6 px-2">
+            <div className="flex flex-wrap md:w-11/12 md:mx-auto mb-6 px-2">
                 { data.categories.map((category : Category) => (
-                    <div key={category.idCategory} className="w-full sm:w-6/12 md:w-4/12 lg:w-3/12 mb-4 px-2">
+                    <div key={category.idCategory}  className="w-1/2 sm:w-4/12 lg:w-2/12 mb-4 px-2">
                         <Link href="/dishes/[name]" as={`/dishes/${category.strCategory}`}>
                             <Card mealName={category.strCategory} mealImg={category.strCategoryThumb} />
                         </Link>
