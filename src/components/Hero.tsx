@@ -19,7 +19,7 @@ export default function Hero() {
                         {/* brand logo with title and tagline */}
 
                         <div className="inline-flex items-center mb-3">
-                            <img src="img/hat.svg" alt="foodie" className="w-20 h-20 sm:w-24 sm:h-24 object-cover" />
+                            <img src="/img/hat.svg" alt="foodie" className="w-20 h-20 sm:w-24 sm:h-24 object-cover" />
                             <h2 className="text-4xl md:text-6xl ml-2 font-semibold tracking-wider text-green-600 font-shadows">
                                 Foodie
                             </h2>
