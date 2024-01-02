@@ -10,7 +10,7 @@ export default function Hero() {
 
                 <div className="w-full md:w-6/12">
                     <div style={{ backgroundImage: "url('/img/hero.jpg')" }}
-                        className="py-48 md:py-64 bg-cover md:rounded-b shadow-sm"></div>
+                        className="py-56 md:py-64 bg-cover md:rounded-b shadow-sm"></div>
                 </div>
 
                 <div className="w-full md:w-6/12 px-4">
