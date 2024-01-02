@@ -44,7 +44,7 @@ export default function Header() {
                
                {/* bookmarks */}
 
-               <Link href="/bookmarks" className="inline-flex items-center text-gray-700 mt-1">
+               <Link href="/bookmarks" className="inline-flex items-center text-gray-700 hover:text-gray-800 transition-color mt-1">
                   
                   <svg viewBox="0 0 24 24" className="w-6 h-6 md:w-5 md:h-5" stroke="currentColor" strokeWidth="2" fill="none" 
                   strokeLinecap="round" strokeLinejoin="round">
