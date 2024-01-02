@@ -33,6 +33,14 @@ export default function Header() {
             { showSearch ? <div className="w-full md:hidden order-last md:order-none mt-2.5 px-2"><Search /></div> : '' }
 
             <div className="md:w-3/12 text-center pe-4 md:pe-0">
+
+               <button className="text-gray-700 me-2 md:hidden" onClick={ ()=> setSearch(!showSearch) }>
+                  <svg className="text-gray-700 w-6 h-6 md:w-5 md:h-5"
+                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                     <path d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 
+                  16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/>
+                  </svg>
+               </button>
                
                {/* bookmarks */}
 
@@ -47,13 +55,7 @@ export default function Header() {
 
                </Link>
 
-               <button className="text-gray-700 ms-1 md:hidden" onClick={ ()=> setSearch(!showSearch) }>
-                  <svg className="text-gray-700 w-6 h-6 md:w-5 md:h-5"
-                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
-                     <path d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 
-                  16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/>
-                  </svg>
-               </button>
+              
 
             </div>
          </nav>
