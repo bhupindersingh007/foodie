@@ -7,7 +7,8 @@ import Link from "next/link";
 import { Component } from "react";
 
 type BookmarksState = {
-    dishesData: any
+    dishesData: any,
+    isLoading : boolean
 };
 
 class Bookmarks extends Component<{}, BookmarksState> {
@@ -16,7 +17,7 @@ class Bookmarks extends Component<{}, BookmarksState> {
 
         super(props);
 
-        this.state = { dishesData: [] };
+        this.state = { dishesData: [], isLoading: true };
 
         this.getRecipeDetails = this.getRecipeDetails.bind(this);
         this.getBookmarkedRecipes = this.getBookmarkedRecipes.bind(this);
@@ -27,7 +28,10 @@ class Bookmarks extends Component<{}, BookmarksState> {
 
         let data = await this.getBookmarkedRecipes();
 
-        this.setState({ dishesData: data });
+        this.setState({ 
+            dishesData: data,
+            isLoading : false 
+        });
 
     }
 
@@ -57,6 +61,16 @@ class Bookmarks extends Component<{}, BookmarksState> {
 
 
     render() {
+
+        if(this.state.isLoading){
+
+            return (
+                <div className="mt-8 md:mt-12">
+                    <p className="text-center mb-6 text-gray-600">Loading Bookmarks...</p>
+                </div>
+            );
+
+        }
 
 
         if (this.state.dishesData.length == 0) {
