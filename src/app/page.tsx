@@ -122,7 +122,7 @@ async function Home() {
 
           <header className="flex justify-between items-start md:items-center mb-2 mt-4 sm:mt-0 mb-4">
 
-            <h2 className="text-2xl md:text-2xl font-semibold tracking-wide capitalize text-gray-700 mb-2 md:mb-0">
+            <h2 className="text-2xl md:text-2xl font-semibold tracking-wide capitalize text-gray-700">
               {randomDishData.meals[0].strMeal}
             </h2>
 

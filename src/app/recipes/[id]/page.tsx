@@ -43,7 +43,7 @@ async function RecipeDetail(props: RecipeDetailProps) {
 
                     <header className="flex justify-between mb-4 mt-4 sm:mt-0 items-start">
 
-                        <h2 className="text-2xl font-semibold tracking-wide capitalize sm:w-10/12 mb-2 sm:mb-0">
+                        <h2 className="text-2xl font-semibold tracking-wide capitalize sm:w-10/12">
                             {data.meals[0].strMeal}
                         </h2>
 
