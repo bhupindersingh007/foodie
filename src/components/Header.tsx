@@ -17,7 +17,7 @@ export default function Header() {
 
             <div className="md:w-3/12 px-2 md:px-4 tracking-wider font-semibold text-gray-800">
                <Link href="/" className="px-2 flex items-center">
-                  <img src="/img/hat.svg" alt="Foodie" className="w-10 h-10 object-cover inline-block" />
+                  <img src="/img/logo.svg" alt="Foodie" className="w-10 h-10 object-cover inline-block" />
                   <h2 className="ml-1 text-2xl tracking-wider
                   text-green-600 tracking-wider font-shadows">Foodie</h2>
                </Link>

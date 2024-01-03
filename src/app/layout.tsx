@@ -30,6 +30,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${shadows_into_light.variable}`}>
+      <head>
+        <link rel="icon" href="/img/logo.svg" type="image/x-icon" />
+      </head>
       <body className={ rubik.className }>
         <Header />
         <main>
