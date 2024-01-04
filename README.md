@@ -7,10 +7,15 @@
 https://github.com/bhupindersingh007/foodie/assets/63149405/6f4255a3-304d-499f-a573-ce26bf7bbb21
 
 ## Search Recipes
-![image](https://github.com/bhupindersingh007/foodie/assets/63149405/011bc0ec-0fde-47b7-8465-a7e25dc83ae9)
+![Search Recipes](https://github.com/bhupindersingh007/foodie/assets/63149405/011bc0ec-0fde-47b7-8465-a7e25dc83ae9)
 
 
 ## Bookmark Recipes
+![Foodie - Bookmarked Recipes](https://github.com/bhupindersingh007/foodie/assets/63149405/c2bd3050-c76d-4561-9cb5-22375fcc8996)
+
+## Saved Bookmarked Recipes
+![Foodie - Saved Bookmarked Recipes](https://github.com/bhupindersingh007/foodie/assets/63149405/2f602ce2-f34f-4b91-89ca-8ae3683b1232)
+
 
 ## Things Used:
 
