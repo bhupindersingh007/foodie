@@ -16,6 +16,14 @@ https://github.com/bhupindersingh007/foodie/assets/63149405/6f4255a3-304d-499f-a
 ## Saved Bookmarked Recipes
 ![Foodie - Saved Bookmarked Recipes](https://github.com/bhupindersingh007/foodie/assets/63149405/2f602ce2-f34f-4b91-89ca-8ae3683b1232)
 
+## Responsive Design
+<div align="center">
+<img src="https://github.com/bhupindersingh007/foodie/assets/63149405/72b7bf4d-7ccd-4d81-b1ca-242ee9710280" width="33%">
+<img src="https://github.com/bhupindersingh007/foodie/assets/63149405/35363096-7e76-46ef-8bcd-06af24f0bc43" width="33%">
+<img src="https://github.com/bhupindersingh007/foodie/assets/63149405/dadd9a6a-819e-4da4-9944-50e56bc20d0c" width="33%">
+</div>
+
+
 
 ## Things Used:
 
