@@ -49,14 +49,6 @@ async function getRecipeDetails(id: number) {
 }
 
 
-type Food = {
-  idMeal: number,
-  strMeal: string,
-  strMealThumb: string
-}
-
-
-
 type Category = {
   idCategory: number,
   strCategory: string,
