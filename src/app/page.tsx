@@ -12,7 +12,7 @@ import BookmarkButton from '@/components/BookmarkButton';
 
 async function getRandomDish() {
 
-  const res = await fetch(`${process.env.API_URL}/random.php`, { next: { revalidate: (24 * 60 * 60) } });
+  const res = await fetch(`${process.env.API_URL}/random.php`, { cache : 'no-cache' });
 
   if (!res.ok) {
     throw new Error('Failed to fetch data')
