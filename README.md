@@ -21,7 +21,16 @@ https://github.com/bhupindersingh007/foodie/assets/63149405/6f4255a3-304d-499f-a
 ## Saved Bookmarked Recipes
 ![Foodie - Saved Bookmarked Recipes](https://github.com/bhupindersingh007/foodie/assets/63149405/2f602ce2-f34f-4b91-89ca-8ae3683b1232)
 
-## Things Used:
+## Installation
+
+1. Clone the repository ```git clone https://github.com/bhupindersingh007/foodie.git``` or download zip.
+2. Open the directory ```foodie``` in the terminal.
+3. Install node dependencies ```npm install```.
+4. Make a new ```.env``` file and copy ```.env.example``` file to ```.env```.
+5. Specify ```.env``` variables like ```API_URL``` and ```API_KEY```.
+6. Run ```npm run build``` to build the application and ```npm run dev``` to start the development server.
+
+## Things Used
 
 - [Next.js v14](https://nextjs.org) - The React Framework for the Web.
 - [React v18](https://react.dev) - The library for web and native user interfaces.
