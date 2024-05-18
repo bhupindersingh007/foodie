@@ -3,6 +3,7 @@ import { Rubik, Shadows_Into_Light_Two } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { BookmarkContextProvider } from '@/contexts/BookmarkContext'
 
 const rubik = Rubik({
   subsets: ['latin'],
@@ -36,7 +37,9 @@ export default function RootLayout({
       <body className={ rubik.className }>
         <Header />
         <main>
-          {children}
+          <BookmarkContextProvider>
+            {children}
+          </BookmarkContextProvider>
         </main>
         <Footer />
       </body>

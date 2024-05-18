@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Alert from "./Alert";
+import { useBookmark } from "@/contexts/BookmarkContext";
 
 type BookmarkButtonProps = {
     recipeId: number
@@ -11,59 +12,34 @@ export default function BookmarkButton(props: BookmarkButtonProps) {
 
     const recipeId = props.recipeId.toString();
 
-    const [isBookmarked, setBookmark] = useState(false);
+    const [isBookmarked, setIsBookmarked] = useState(false);
     const [showAlert, setAlert] = useState(false);
+    const {bookmarks, deleteBookmark, addBookmark} = useBookmark();
 
     const hideAlert = () => setTimeout(() => setAlert(false), 2000);
 
     useEffect(() => {
 
-        if (localStorage.bookmarks) {
-
-            JSON.parse(localStorage.bookmarks).indexOf(recipeId) != -1
-                ? setBookmark(true)
-                : setBookmark(false);
-
-        }
+        bookmarks.indexOf(recipeId) !== -1 
+        ? setIsBookmarked(true)
+        : setIsBookmarked(false);
 
     });
-
-    const addBookmark = (bookmarks: any) => {
-     
-        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-        
-    }
 
 
     const handleClick = () => {
 
-        let bookmarks = localStorage.bookmarks == null ? [] : JSON.parse(localStorage.bookmarks);
-
-        if (!localStorage.bookmarks) {
-
-            addBookmark([recipeId]);
-            setBookmark(true);
-            setAlert(true);
-            hideAlert();
-            return;
+        if(isBookmarked){
+          
+           deleteBookmark(recipeId);
+           setIsBookmarked(false);
+           return;
         }
 
-
-        if (bookmarks.indexOf(recipeId) != -1) {
-
-            bookmarks = bookmarks.filter((bookmark: string) => bookmark != recipeId);
-            addBookmark(bookmarks);
-            setBookmark(false);
-            return;
-            
-        }
-
-        bookmarks.push(recipeId);
-        addBookmark(bookmarks);
-        setBookmark(true);
+        addBookmark(recipeId);
+        setIsBookmarked(true);
         setAlert(true);
         hideAlert();
-
     };
 
 
