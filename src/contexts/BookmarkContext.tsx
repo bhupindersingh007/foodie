@@ -27,9 +27,8 @@ export const BookmarkContextProvider = (props: { children: ReactNode }) => {
 
         if (!initailLoad) {
             localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-            console.log('use-effect 2 - inside')
         }
-        
+
     }, [bookmarks, initailLoad]);
 
 
