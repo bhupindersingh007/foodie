@@ -3,9 +3,9 @@
 import { ReactNode, createContext, useContext, useState, useEffect } from 'react';
 
 interface BookmarkContextType {
-    bookmarks : string[], 
-    deleteBookmark : (bookmarkId: string) => void, 
-    addBookmark : (bookmarkId : string) => void
+    bookmarks: string[],
+    deleteBookmark: (bookmarkId: string) => void,
+    addBookmark: (bookmarkId: string) => void
 }
 
 const BookmarkContext = createContext<BookmarkContextType | null>(null);
@@ -13,30 +13,39 @@ const BookmarkContext = createContext<BookmarkContextType | null>(null);
 
 export const BookmarkContextProvider = (props: { children: ReactNode }) => {
 
-    const storedBookmarks = localStorage.bookmarks ? JSON.parse(localStorage.bookmarks) : [];
+    const [bookmarks, setBookmarks] = useState<string[]>([]);
+    const [initailLoad, setIsInitialLoad] = useState<boolean>(true);
 
-    const [bookmarks, setBookmarks] = useState<string[]>(storedBookmarks);
-    
-    useEffect(()=>{
-         
-        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+    useEffect(() => {
 
-    }, [bookmarks]);
+        const storedBookmarks = localStorage.bookmarks ? JSON.parse(localStorage.bookmarks) : [];
+        setBookmarks(storedBookmarks);
+        setIsInitialLoad(false);
+    }, [])
+
+    useEffect(() => {
+
+        if (!initailLoad) {
+            localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+            console.log('use-effect 2 - inside')
+        }
+        
+    }, [bookmarks, initailLoad]);
 
 
-    const addBookmark = (bookmarkId : string) : void => {
+    const addBookmark = (bookmarkId: string): void => {
         setBookmarks([...bookmarks, bookmarkId]);
     }
-    
-    const deleteBookmark = (bookmarkId: string) : void => {
-        
+
+    const deleteBookmark = (bookmarkId: string): void => {
+
         const updatedBookmarks = bookmarks.filter(bookmark => bookmark != bookmarkId)
         setBookmarks(updatedBookmarks);
     }
 
     return (
 
-        <BookmarkContext.Provider value={{bookmarks, deleteBookmark, addBookmark}}>
+        <BookmarkContext.Provider value={{ bookmarks, deleteBookmark, addBookmark }}>
             {props.children}
         </BookmarkContext.Provider>
 
