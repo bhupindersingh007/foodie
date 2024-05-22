@@ -17,7 +17,7 @@ https://github.com/bhupindersingh007/foodie/assets/63149405/6f4255a3-304d-499f-a
 - **Detailed Recipe Information**: View detailed recipe information with steps, ingredients and video tutorial.
 - **YouTube Video Integration**: Watch YouTube videos related to recipes.
 - **Step-by-Step Instructions**: Follow clear, step-by-step instructions for each recipe.
-- **Bookmarking**: Bookmark your favorite recipes for easy access.
+- **Bookmarking**: Bookmark your favorite recipes for later easy access.
 - **Responsive UI**: Enjoy a fully responsive user interface for seamless use across devices.
 
 ## Search Recipes
