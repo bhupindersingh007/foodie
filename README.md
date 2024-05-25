@@ -1,5 +1,5 @@
 ## Introduction
-**Foodie** - A Food Recipes application with Next.js, React, TypeScript & Tailwind CSS.
+**Foodie** - A Food Recipes SPA with Next.js, React, TypeScript & Tailwind CSS.
 
 **Foodie Link** - https://foodie-recipes.vercel.app
 
